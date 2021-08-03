@@ -1,12 +1,14 @@
-import 'package:bloc_network_exemple/bloc/user_bloc.dart';
-import 'package:bloc_network_exemple/bloc/user_state.dart';
+//import 'package:bloc_network_exemple/bloc/user_bloc.dart';
+
+import 'package:bloc_network_exemple/cubit/user_cubit.dart';
+import 'package:bloc_network_exemple/cubit/user_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class UserList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<UserBloc, UserState>(
+    return BlocBuilder<UserCubit, UserState>(
       builder: (context, state) {
         if(state is UserEmptyState) {
           return Center(child: Text('No data received. Press Button "Load" ', 
